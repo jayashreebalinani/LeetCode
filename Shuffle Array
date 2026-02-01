@@ -1,0 +1,15 @@
+/**
+ * @param {number[]} nums
+ * @param {number} n
+ * @return {number[]}
+ */
+var shuffle = function(nums, n) {
+    var x = nums.slice(0,n);
+    var y = nums.slice(n,nums.length);
+    const result = []
+    for(var i = 0;i < x.length;i++)
+    {
+        result.push(x[i],y[i])
+    }
+    return result;
+};
