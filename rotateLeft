@@ -1,0 +1,11 @@
+function rotateLeft(d, arr) {
+    // Write your code here
+    
+for(var i = 1; i <= d ;i++)
+{
+const shiftedElement = arr.shift();
+arr.push(shiftedElement)
+}
+return arr
+
+}
