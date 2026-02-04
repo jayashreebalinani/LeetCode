@@ -1,0 +1,24 @@
+function arrayManipulation(n, queries) {
+  const arr = new Array(n + 1).fill(0);
+
+  // Apply difference array updates
+  for (const [start, end, value] of queries) {
+    arr[start - 1] += value;
+    if (end < n) {
+      arr[end] -= value;
+    }
+  }
+
+  // Build prefix sum & track max
+  let max = 0;
+  let current = 0;
+
+  for (let i = 0; i < n; i++) {
+    current += arr[i];
+    if (current > max) {
+      max = current;
+    }
+  }
+
+  return max;
+}
